@@ -20,7 +20,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("io.micronaut.liquibase:micronaut-liquibase")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
-    implementation 'de.huxhorn.sulky:de.huxhorn.sulky.ulid:8.3.0'
+implementation 'de.huxhorn.sulky:de.huxhorn.sulky.ulid:8.3.0'
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
     runtimeOnly("org.yaml:snakeyaml")
