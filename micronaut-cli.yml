@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.example
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [app-name, assertj, data, data-jpa, gradle, http-client, jackson-databind, java, java-application, jdbc-hikari, junit, liquibase, logback, management, mariadb, micronaut-aot, micronaut-build, micronaut-http-validation, micronaut-test-rest-assured, mockito, mockserver-client-java, netty-server, readme, shade, testcontainers, yaml, yaml-build]

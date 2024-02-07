@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: pokemonApi
+datasources:
+  default:
+    url: jdbc:mariadb://localhost:3306/db
+    username: root
+    password: ''
+    driver-class-name: org.mariadb.jdbc.Driver
+    db-type: mariadb
+    dialect: MYSQL
+liquibase:
+  datasources:
+    default:
+      change-log: classpath:db/liquibase-changelog.yaml
+

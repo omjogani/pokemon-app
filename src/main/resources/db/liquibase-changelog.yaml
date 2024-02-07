@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: ./product-db/pokemon/pokemon.sql
+      relativeToChangeLogFile: true
+#  - include:
+#      file: ./product-db/pokemon_detail/pokemon_detail.sql
+#      relativeToChangeLogFile: true
