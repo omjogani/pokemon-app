@@ -7,8 +7,8 @@
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
 ## Tools (Required)
-- [Java](/docs/tools/java.md)
-- [Gradle](/docs/tools/gradle.md)
+- [Java](/docs/tools/java.md)  JDK 21
+- [Gradle](/docs/tools/gradle.md) v7.4.2
 
 ## Library
 - [Micronaut](/docs/libs/micronaut.md)
