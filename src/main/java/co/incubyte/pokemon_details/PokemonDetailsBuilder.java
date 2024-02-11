@@ -11,7 +11,7 @@ public class PokemonDetailsBuilder {
     private int weight;
     private int height;
 
-    private List<AbilityDetails> abilityDetails;
+//    private List<AbilityDetails> abilityDetails;
 
     public static PokemonDetailsBuilder buildPokemonDetails() {
         return new PokemonDetailsBuilder();
@@ -42,10 +42,10 @@ public class PokemonDetailsBuilder {
         return this;
     }
 
-    public PokemonDetailsBuilder withAbilityDetails(List<AbilityDetails> abilityDetails) {
-        this.abilityDetails = abilityDetails;
-        return this;
-    }
+//    public PokemonDetailsBuilder withAbilityDetails(List<AbilityDetails> abilityDetails) {
+//        this.abilityDetails = abilityDetails;
+//        return this;
+//    }
 
     public PokemonDetails build() {
         PokemonDetails pokemonDetails = new PokemonDetails();
@@ -54,6 +54,7 @@ public class PokemonDetailsBuilder {
         pokemonDetails.setUrl(url);
         pokemonDetails.setWeight(weight);
         pokemonDetails.setHeight(height);
+//        pokemonDetails.setAbilityDetails(abilityDetails);
         return pokemonDetails;
     }
 }

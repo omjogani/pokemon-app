@@ -29,8 +29,13 @@ class PokemonDetailsServiceShould {
   @Test
   void get_pokemon_details_by_id() {
     // arrange
+    AbilityDetails abilityDetails =
+        new AbilityDetails(
+            "FAKE_ABILITY_DETAILS_ID",
+            false,
+            new Ability("FAKE_ABILITY_ID", "FAKE_ABILITY_NAME", "FAKE_ABILITY_URL"));
     PokemonDetails staticPokemonDetails =
-        new PokemonDetails("FAKE_ID", "FAKE_NAME", "FAKE_URL", 100, 100);
+        new PokemonDetails("FAKE_ID", "FAKE_NAME", "FAKE_URL", 100, 100, List.of(abilityDetails, abilityDetails));
     when(pokemonDetailsRepository.findById("FAKE_ID"))
         .thenReturn(java.util.Optional.of(staticPokemonDetails));
 
@@ -43,6 +48,7 @@ class PokemonDetailsServiceShould {
     assertThat(pokemonDetails.getUrl()).isEqualTo("FAKE_URL");
     assertThat(pokemonDetails.getHeight()).isEqualTo(100);
     assertThat(pokemonDetails.getWeight()).isEqualTo(100);
+    assertThat(pokemonDetails.getAbilityDetails()).isEqualTo(List.of(abilityDetails, abilityDetails));
     verify(pokemonDetailsRepository).findById("FAKE_ID");
   }
 
@@ -53,10 +59,9 @@ class PokemonDetailsServiceShould {
         new AbilityDetails(
             "FAKE_ABILITY_DETAILS_ID",
             false,
-            new Ability("FAKE_ABILITY_ID", "FAKE_ABILITY_NAME", "FAKE_ABILITY_URL"),
-            new PokemonDetails("FAKE_ID", "FAKE_NAME", "FAKE_URL", 100, 100));
+            new Ability("FAKE_ABILITY_ID", "FAKE_ABILITY_NAME", "FAKE_ABILITY_URL"));
     PokemonDetailsRequest staticPokemonRequest =
-        new PokemonDetailsRequest("FAKE_NAME", "FAKE_URL", 100, 100, List.of(abilityDetails));
+        new PokemonDetailsRequest("FAKE_NAME", "FAKE_URL", 100, 100);
     when(pokemonDetailsRepository.save(any(PokemonDetails.class))).then(returnsFirstArg());
 
     // action

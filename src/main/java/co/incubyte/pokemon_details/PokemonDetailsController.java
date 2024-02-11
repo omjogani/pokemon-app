@@ -28,8 +28,7 @@ public class PokemonDetailsController {
         pokemonDetails.getName(),
         pokemonDetails.getUrl(),
         pokemonDetails.getHeight(),
-        pokemonDetails.getWeight(),
-        listOfAbilities);
+        pokemonDetails.getWeight());
   }
 
   @Post
@@ -44,7 +43,6 @@ public class PokemonDetailsController {
         addedPokemonDetails.getName(),
         addedPokemonDetails.getUrl(),
         addedPokemonDetails.getHeight(),
-        addedPokemonDetails.getWeight(),
-        listOfAbilities);
+        addedPokemonDetails.getWeight());
   }
 }

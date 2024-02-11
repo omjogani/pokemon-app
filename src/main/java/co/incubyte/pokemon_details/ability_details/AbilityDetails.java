@@ -7,20 +7,22 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "ability_detail")
 public class AbilityDetails {
-  @Id private String id;
+  @Id
+  private String id;
   private boolean isHidden;
   @OneToOne
   private Ability ability;
 
-  @ManyToOne private PokemonDetails pokemonDetails;
+  @ManyToOne
+  @JoinColumn(name = "pokemon_detail_id")
+  private PokemonDetails pokemonDetails;
 
   public AbilityDetails() {}
 
-  public AbilityDetails(String id, boolean isHidden, Ability ability, PokemonDetails pokemonDetails) {
+  public AbilityDetails(String id, boolean isHidden, Ability ability) {
     this.id = id;
     this.isHidden = isHidden;
     this.ability = ability;
-    this.pokemonDetails = pokemonDetails;
   }
 
   public String getId() {
