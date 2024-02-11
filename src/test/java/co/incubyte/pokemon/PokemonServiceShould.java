@@ -56,7 +56,6 @@ class PokemonServiceShould {
 
   @Test
   void throw_an_exception_entity_not_found_on_invalid_pokemon_id() {
-    Pokemon pokemon = new Pokemon("FAKE_ID", "FAKE_NAME", "FAKE_URL");
     when(pokemonRepository.findById("FAKE_ID")).thenReturn(Optional.empty());
 
     assertThrows(EntityNotFoundException.class, () -> {

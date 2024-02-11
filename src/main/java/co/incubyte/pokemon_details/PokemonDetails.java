@@ -1,9 +1,11 @@
 package co.incubyte.pokemon_details;
 
-import io.micronaut.data.annotation.Id;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
 
 @Entity
 @Table(name = "pokemon_detail")
@@ -18,19 +20,15 @@ public class PokemonDetails {
     private int height;
     private int weight;
 
-    @OneToMany
-    private AbilityDetails abilityDetails;
-
     public PokemonDetails() {
     }
 
-    public PokemonDetails(String id, String name, String url, int height, int weight, AbilityDetails abilityDetails) {
+    public PokemonDetails(String id, String name, String url, int height, int weight) {
         this.id = id;
         this.name = name;
         this.url = url;
         this.height = height;
         this.weight = weight;
-        this.abilityDetails = abilityDetails;
     }
 
     public String getId() {
@@ -71,13 +69,5 @@ public class PokemonDetails {
 
     public void setWeight(int weight) {
         this.weight = weight;
-    }
-
-    public AbilityDetails getAbilityDetails() {
-        return abilityDetails;
-    }
-
-    public void setAbilityDetails(AbilityDetails abilityDetails) {
-        this.abilityDetails = abilityDetails;
     }
 }

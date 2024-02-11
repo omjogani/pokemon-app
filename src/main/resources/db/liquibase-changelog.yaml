@@ -1,7 +1,13 @@
 databaseChangeLog:
   - include:
-      file: ./product-db/pokemon/pokemon.sql
+      file: ./pokemon/pokemon.sql
       relativeToChangeLogFile: true
-#  - include:
-#      file: ./product-db/pokemon_detail/pokemon_detail.sql
-#      relativeToChangeLogFile: true
+  - include:
+      file: ./pokemon_detail/pokemon_detail.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: ./pokemon_detail/ability_detail.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: ./pokemon_detail/ability.sql
+      relativeToChangeLogFile: true

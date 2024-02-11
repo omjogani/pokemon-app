@@ -1,6 +1,8 @@
 package co.incubyte.pokemon_details;
 
-import co.incubyte.pokemon.PokemonBuilder;
+import co.incubyte.pokemon_details.ability_details.AbilityDetails;
+
+import java.util.List;
 
 public class PokemonDetailsBuilder {
     private String id;
@@ -9,7 +11,7 @@ public class PokemonDetailsBuilder {
     private int weight;
     private int height;
 
-    private AbilityDetails abilityDetails;
+    private List<AbilityDetails> abilityDetails;
 
     public static PokemonDetailsBuilder buildPokemonDetails() {
         return new PokemonDetailsBuilder();
@@ -40,7 +42,7 @@ public class PokemonDetailsBuilder {
         return this;
     }
 
-    public PokemonDetailsBuilder withAbilityDetails(AbilityDetails abilityDetails) {
+    public PokemonDetailsBuilder withAbilityDetails(List<AbilityDetails> abilityDetails) {
         this.abilityDetails = abilityDetails;
         return this;
     }
@@ -52,7 +54,6 @@ public class PokemonDetailsBuilder {
         pokemonDetails.setUrl(url);
         pokemonDetails.setWeight(weight);
         pokemonDetails.setHeight(height);
-        pokemonDetails.setAbilityDetails(abilityDetails);
         return pokemonDetails;
     }
 }
