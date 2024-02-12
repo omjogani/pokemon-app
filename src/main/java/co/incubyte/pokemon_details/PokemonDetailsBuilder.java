@@ -1,8 +1,6 @@
 package co.incubyte.pokemon_details;
 
-import co.incubyte.pokemon_details.ability_details.AbilityDetails;
 
-import java.util.List;
 
 public class PokemonDetailsBuilder {
     private String id;

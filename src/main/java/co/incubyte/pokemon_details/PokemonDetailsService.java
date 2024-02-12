@@ -1,13 +1,8 @@
 package co.incubyte.pokemon_details;
 
-import co.incubyte.pokemon_details.ability_details.AbilityDetails;
-import co.incubyte.pokemon_details.ability_details.ability.Ability;
 import de.huxhorn.sulky.ulid.ULID;
 import exceptions.EntityNotFoundException;
 import jakarta.inject.Singleton;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Singleton
 public class PokemonDetailsService {

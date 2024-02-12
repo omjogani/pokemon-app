@@ -1,4 +1,10 @@
-micronaut.application.name: pokemonapi
+micronaut:
+  application:
+    name: pokemonapi
+  server:
+    cors:
+      enabled: true
+
 datasources:
   default:
     db-type: mariadb

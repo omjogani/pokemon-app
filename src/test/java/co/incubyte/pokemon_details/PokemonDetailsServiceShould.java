@@ -6,10 +6,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.List;
-
-import co.incubyte.pokemon_details.ability_details.AbilityDetails;
-import co.incubyte.pokemon_details.ability_details.ability.Ability;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -29,13 +25,8 @@ class PokemonDetailsServiceShould {
   @Test
   void get_pokemon_details_by_id() {
     // arrange
-    AbilityDetails abilityDetails =
-        new AbilityDetails(
-            "FAKE_ABILITY_DETAILS_ID",
-            false,
-            new Ability("FAKE_ABILITY_ID", "FAKE_ABILITY_NAME", "FAKE_ABILITY_URL"));
     PokemonDetails staticPokemonDetails =
-        new PokemonDetails("FAKE_ID", "FAKE_NAME", "FAKE_URL", 100, 100, List.of(abilityDetails, abilityDetails));
+        new PokemonDetails("FAKE_ID", "FAKE_NAME", "FAKE_URL", 100, 100);
     when(pokemonDetailsRepository.findById("FAKE_ID"))
         .thenReturn(java.util.Optional.of(staticPokemonDetails));
 
@@ -48,18 +39,12 @@ class PokemonDetailsServiceShould {
     assertThat(pokemonDetails.getUrl()).isEqualTo("FAKE_URL");
     assertThat(pokemonDetails.getHeight()).isEqualTo(100);
     assertThat(pokemonDetails.getWeight()).isEqualTo(100);
-    assertThat(pokemonDetails.getAbilityDetails()).isEqualTo(List.of(abilityDetails, abilityDetails));
     verify(pokemonDetailsRepository).findById("FAKE_ID");
   }
 
   @Test
   void add_pokemon_detail_with_pokemon_details_data() {
     // arrange
-    AbilityDetails abilityDetails =
-        new AbilityDetails(
-            "FAKE_ABILITY_DETAILS_ID",
-            false,
-            new Ability("FAKE_ABILITY_ID", "FAKE_ABILITY_NAME", "FAKE_ABILITY_URL"));
     PokemonDetailsRequest staticPokemonRequest =
         new PokemonDetailsRequest("FAKE_NAME", "FAKE_URL", 100, 100);
     when(pokemonDetailsRepository.save(any(PokemonDetails.class))).then(returnsFirstArg());

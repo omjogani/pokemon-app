@@ -1,9 +1,6 @@
 package co.incubyte.pokemon_details;
 
-import co.incubyte.pokemon_details.ability_details.AbilityDetails;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "pokemon_detail")
@@ -15,8 +12,8 @@ public class PokemonDetails {
   private int height;
   private int weight;
 
-  @OneToMany(mappedBy = "pokemonDetails", cascade = CascadeType.ALL)
-  private List<AbilityDetails> abilityDetails;
+//  @OneToMany(mappedBy = "pokemonDetails", cascade = CascadeType.ALL)
+//  private List<AbilityDetails> abilityDetails;
 
   public PokemonDetails() {}
 
@@ -25,14 +22,15 @@ public class PokemonDetails {
       String name,
       String url,
       int height,
-      int weight,
-      List<AbilityDetails> abilityDetails) {
+      int weight
+//      List<AbilityDetails> abilityDetails
+  ){
     this.id = id;
     this.name = name;
     this.url = url;
     this.height = height;
     this.weight = weight;
-    this.abilityDetails = abilityDetails;
+//    this.abilityDetails = abilityDetails;
   }
 
   public String getId() {
@@ -75,11 +73,11 @@ public class PokemonDetails {
     this.weight = weight;
   }
 
-  public List<AbilityDetails> getAbilityDetails() {
-    return abilityDetails;
-  }
-
-  public void setAbilityDetails(List<AbilityDetails> abilityDetails) {
-    this.abilityDetails = abilityDetails;
-  }
+//  public List<AbilityDetails> getAbilityDetails() {
+//    return abilityDetails;
+//  }
+//
+//  public void setAbilityDetails(List<AbilityDetails> abilityDetails) {
+//    this.abilityDetails = abilityDetails;
+//  }
 }
